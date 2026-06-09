@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>中车 PPT — Template</title>
+  <style>
+    /* 仅页面 chrome，不用于 .slide 内部 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #FFFFFF;
+      font-family: 'Microsoft YaHei', 'Inter', Arial, sans-serif;
+    }
+    .slide-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 40px 0;
+      min-width: 1920px; /* 防止 1920px 幻灯片被水平裁切 */
+    }
+    #export-btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slide-stage">
+
+  <!-- ┌─ SLIDE 1 — 主旨大卡 + 数据辅助卡示范 ─────────────────────────────┐ -->
+  <div class="slide" style="
+    width: 1920px; height: 1080px;
+    position: relative; overflow: hidden;
+    background: #FFFFFF;
+    box-sizing: border-box;
+  ">
+    <!-- 页面顶部强调色条（仅装饰，少量） -->
+    <div style="
+      position: absolute; left: 40px; top: 40px;
+      width: 120px; height: 6px;
+      background: #C70019; border-radius: 3px;
+    "></div>
+
+    <!-- 主标题区 -->
+    <h1 style="
+      position: absolute; left: 40px; top: 72px;
+      margin: 0; width: 1500px;
+      font-family: 'Microsoft YaHei', 'Inter', Arial, sans-serif;
+      font-size: 64px; font-weight: 700; line-height: 1.1;
+      color: #000000;
+    ">Q3 业务回顾与下季节奏</h1>
+
+    <!-- 副标题 -->
+    <p style="
+      position: absolute; left: 40px; top: 200px;
+      margin: 0; width: 1500px;
+      font-size: 30px; line-height: 1.4;
+      color: #717071;
+    ">2026 年第三季度核心指标与四季度执行重点</p>
+
+    <!-- 主卡（左 60%） -->
+    <div style="
+      position: absolute; left: 40px; top: 300px;
+      width: 1180px; height: 740px;
+      background: #FFFFFF;
+      border: 1px solid #B4B5B5; border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-sizing: border-box; min-height: 0; overflow: hidden;
+      padding: 32px;
+    ">
+      <!-- 左侧强调线 -->
+      <div style="
+        position: absolute; left: 0; top: 32px;
+        width: 4px; height: 56px;
+        background: #C70019; border-top-right-radius: 2px; border-bottom-right-radius: 2px;
+      "></div>
+
+      <h2 style="
+        margin: 0 0 24px 0;
+        font-size: 40px; font-weight: 700; color: #000000;
+      ">三大业务系统已上线</h2>
+
+      <ul style="
+        margin: 0; padding: 0 0 0 32px; list-style: disc;
+        color: #000000;
+      ">
+        <li style="font-size: 28px; line-height: 1.5; margin-bottom: 20px;">
+          智能客服平台覆盖 12 个区域，平均响应缩短至 38 秒
+        </li>
+        <li style="font-size: 28px; line-height: 1.5; margin-bottom: 20px;">
+          经销商订单系统完成迁移，订单一致性率 99.6%
+        </li>
+        <li style="font-size: 28px; line-height: 1.5;">
+          数据中台对接 7 个业务源，每日入仓 4.2 亿条
+        </li>
+      </ul>
+    </div>
+
+    <!-- 数据卡 1（右上） -->
+    <div style="
+      position: absolute; left: 1244px; top: 300px;
+      width: 636px; height: 358px;
+      background: #FFFFFF;
+      border: 1px solid #B4B5B5; border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-sizing: border-box; min-height: 0; overflow: hidden;
+      padding: 32px;
+    ">
+      <p style="
+        margin: 0 0 12px 0;
+        font-size: 22px; color: #717071;
+      ">NPS 净推荐值</p>
+      <p style="
+        margin: 0;
+        font-size: 72px; font-weight: 700; line-height: 1;
+        color: #C70019;
+      ">58</p>
+      <p style="
+        margin: 16px 0 0 0;
+        font-size: 22px; color: #717071;
+      ">较 Q2 提升 26 个点</p>
+    </div>
+
+    <!-- 数据卡 2（右下，核心数字用中车红强调） -->
+    <div style="
+      position: absolute; left: 1244px; top: 682px;
+      width: 636px; height: 358px;
+      background: #FFFFFF;
+      border: 1px solid #B4B5B5; border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-sizing: border-box; min-height: 0; overflow: hidden;
+      padding: 32px;
+    ">
+      <p style="
+        margin: 0 0 12px 0;
+        font-size: 22px; color: #717071;
+      ">高风险订单占比</p>
+      <p style="
+        margin: 0;
+        font-size: 72px; font-weight: 700; line-height: 1;
+        color: #C70019;
+      ">4.3%</p>
+      <p style="
+        margin: 16px 0 0 0;
+        font-size: 22px; color: #717071;
+      ">需 Q4 重点干预
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Export 按钮 -->
+<button id="export-btn" style="
+  position: fixed; top: 20px; right: 20px; z-index: 9999;
+  padding: 12px 24px;
+  background: #C70019; color: #FFFFFF;
+  border: none; border-radius: 8px;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer;
+">Export PPTX</button>
+
+<!-- ============================================================
+     validator: window.validateSlides()
+     ============================================================ -->
+<script>
+(function () {
+  const SLIDE_SELECTOR = '.slide';
+  const EXPECTED_BG = 'rgb(255, 255, 255)';
+
+  const BAD_TRANSFORM =
+    /\b(?:translate|translateX|translateY|translate3d|scale|scaleX|scaleY|scale3d|skew|skewX|skewY|matrix|matrix3d)\s*\(/;
+  const BAD_BACKGROUND = /\b(?:radial-gradient|conic-gradient)\s*\(/;
+  const VIEWPORT_UNITS = /\b\d*\.?\d+(?:vh|vw|vmin|vmax)\b/;
+  const FUNC_LIMITS = /\b(?:clamp|min|max)\s*\(/;
+  const ICON_FONT_CLASS = /\b(?:fa-[a-z0-9-]+|material-icons|material-symbols-[a-z]+)\b/;
+
+  const STYLE_ATTR_BLOCKERS = [
+    { name: 'backdrop-filter', re: /backdrop-filter\s*:/i },
+    { name: 'clip-path', re: /clip-path\s*:/i },
+    { name: 'mask-image', re: /mask-image\s*:/i },
+    { name: 'mix-blend-mode', re: /mix-blend-mode\s*:/i },
+    { name: 'background-blend-mode', re: /background-blend-mode\s*:/i },
+    { name: 'text-shadow', re: /text-shadow\s*:/i },
+    { name: 'animation', re: /(?:^|[;\s])animation(?:-\w+)?\s*:/i },
+    { name: 'transition', re: /(?:^|[;\s])transition(?:-\w+)?\s*:/i },
+    { name: 'filter (incl. blur)', re: /(?:^|[;\s])filter\s*:/i },
+    { name: 'inset box-shadow', re: /box-shadow\s*:[^;]*\binset\b/i },
+    { name: 'outline', re: /(?:^|[;\s])outline\s*:/i },
+    { name: 'lazy image', re: /loading\s*=\s*["']lazy["']/i }
+  ];
+
+  function describe(el) {
+    const id = el.id ? '#' + el.id : '';
+    const cls =
+      el.className && typeof el.className === 'string'
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+    return el.tagName.toLowerCase() + id + cls;
+  }
+  function locate(el, idx) { return 'slide ' + (idx + 1) + ' › ' + describe(el); }
+
+  function hasTransformedAncestor(slide) {
+    let p = slide.parentElement;
+    while (p && p !== document.body) {
+      const t = getComputedStyle(p).transform;
+      if (t && t !== 'none') return p;
+      p = p.parentElement;
+    }
+    return null;
+  }
+
+  window.validateSlides = function validateSlides() {
+    const slides = Array.from(document.querySelectorAll(SLIDE_SELECTOR));
+    const issues = [];
+
+    if (slides.length === 0) {
+      issues.push('No elements match ".slide". Add class="slide" to slide roots.');
+      return issues;
+    }
+
+    document.querySelectorAll('link[rel="stylesheet"][href^="http"]').forEach((link) => {
+      issues.push('External stylesheet not allowed: ' + link.href + ' (crrc-ppt forbids external CSS / Google Fonts)');
+    });
+
+    const stage = document.querySelector('.slide-stage') || document.body;
+    const stageW = stage.getBoundingClientRect().width;
+    if (stageW < 1920) {
+      issues.push('.slide-stage width is ' + stageW.toFixed(0) + 'px < 1920px; preview may horizontally clip slides. Add min-width: 1920px.');
+    }
+
+    slides.forEach((slide, idx) => {
+      const cs = getComputedStyle(slide);
+      const w = parseFloat(cs.width);
+      const h = parseFloat(cs.height);
+
+      if (Math.round(w) !== 1920 || Math.round(h) !== 1080) {
+        issues.push(locate(slide, idx) + ' — slide size is ' + Math.round(w) + '×' + Math.round(h) + ', expected 1920×1080');
+      }
+      if (cs.position !== 'relative') {
+        issues.push(locate(slide, idx) + ' — slide position is "' + cs.position + '", expected "relative"');
+      }
+      if (cs.overflow !== 'hidden') {
+        issues.push(locate(slide, idx) + ' — slide overflow is "' + cs.overflow + '", expected "hidden"');
+      }
+      if (cs.backgroundColor !== EXPECTED_BG) {
+        issues.push(locate(slide, idx) + ' — slide background-color is ' + cs.backgroundColor + ', expected ' + EXPECTED_BG + ' (#FFFFFF)');
+      }
+      const ancestor = hasTransformedAncestor(slide);
+      if (ancestor) {
+        issues.push(locate(slide, idx) + ' — has a transformed ancestor (' + describe(ancestor) + '); move slide out of it');
+      }
+
+      slide.querySelectorAll('*').forEach((el) => {
+        const inline = el.getAttribute('style') || '';
+        const klass = (el.getAttribute('class') || '');
+        const s = getComputedStyle(el);
+
+        if (inline) {
+          const inlineXform = (inline.match(/transform\s*:\s*([^;]+)/i) || [])[1] || '';
+          if (BAD_TRANSFORM.test(inlineXform)) {
+            issues.push(locate(el, idx) + ' — transform: ' + inlineXform.trim() + ' (only rotate is allowed)');
+          }
+        }
+
+        const bg = s.backgroundImage || '';
+        if (BAD_BACKGROUND.test(bg)) {
+          const type = bg.includes('radial') ? 'radial-gradient' : 'conic-gradient';
+          issues.push(locate(el, idx) + ' — uses ' + type + ' (use linear-gradient or stacked divs)');
+        }
+
+        // D8: flex/grid 直接子项必须 min-height:0（防纵向 blow-out）
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const pd = getComputedStyle(parentEl).display;
+          if (pd === 'flex' || pd === 'grid' || pd === 'inline-flex' || pd === 'inline-grid') {
+            if (s.minHeight !== '0px') {
+              issues.push(locate(el, idx) + ' — flex/grid child without min-height:0 (may blow out vertically; add min-height:0; overflow:hidden)');
+            }
+          }
+        }
+
+        if (inline) {
+          STYLE_ATTR_BLOCKERS.forEach((rule) => {
+            if (rule.re.test(inline)) issues.push(locate(el, idx) + ' — uses ' + rule.name + ' (blocked)');
+          });
+          if (VIEWPORT_UNITS.test(inline)) issues.push(locate(el, idx) + ' — uses viewport units (vh/vw/vmin/vmax); use px');
+          if (FUNC_LIMITS.test(inline)) issues.push(locate(el, idx) + ' — uses clamp()/min()/max() (blocked; use fixed px)');
+        }
+
+        if (klass && ICON_FONT_CLASS.test(klass)) {
+          issues.push(locate(el, idx) + ' — icon font class "' + klass + '"; use inline <svg> instead');
+        }
+
+        if (el.tagName === 'IMG') {
+          const src = el.getAttribute('src') || '';
+          if (!src) issues.push(locate(el, idx) + ' — <img> empty src');
+          else if (!/^(https:\/\/|data:)/i.test(src)) issues.push(locate(el, idx) + ' — <img src="' + src + '"> must be https:// or data:');
+          else if (el.complete && el.naturalWidth === 0) issues.push(locate(el, idx) + ' — <img> failed to load: ' + src);
+          if (el.getAttribute('loading') === 'lazy') issues.push(locate(el, idx) + ' — <img loading="lazy">; remove it');
+          if (el.hasAttribute('srcset')) issues.push(locate(el, idx) + ' — <img srcset> not allowed; pin to single URL');
+        }
+
+        if (['VIDEO', 'AUDIO', 'IFRAME', 'CANVAS', 'PICTURE', 'SOURCE'].includes(el.tagName)) {
+          issues.push(locate(el, idx) + ' — <' + el.tagName.toLowerCase() + '> not captured; bake to <img> or SVG');
+        }
+
+        if (el.tagName.toLowerCase() === 'image' && el.namespaceURI === 'http://www.w3.org/2000/svg') {
+          issues.push(locate(el, idx) + ' — SVG <image href> not allowed (no external resources in SVG)');
+        }
+
+        const da = el.getAttribute && el.getAttribute('stroke-dasharray');
+        if (da && (el.tagName.toLowerCase() === 'circle' || el.tagName.toLowerCase() === 'path')) {
+          issues.push(locate(el, idx) + ' — stroke-dasharray on <' + el.tagName.toLowerCase() + '>; confirm NOT used to fake pie/donut/progress');
+        }
+
+        // 字号下限检查（硬约束：注释 18 / 正文 24 / 卡片标题 30 / 主标题 56）
+        const hasDirectText = Array.from(el.childNodes).some(
+          (n) => n.nodeType === 3 && n.textContent.trim().length > 0
+        );
+        if (hasDirectText) {
+          const fontPx = parseFloat(s.fontSize);
+          if (fontPx && fontPx < 18) {
+            issues.push(locate(el, idx) + ' — font-size ' + fontPx + 'px below 18px hard floor');
+          } else if (fontPx && fontPx >= 18 && fontPx < 24) {
+            const txt = el.textContent.trim();
+            if (txt.length > 15) {
+              issues.push(locate(el, idx) + ' — font-size ' + fontPx + 'px with ' + txt.length + ' chars looks like body text below 24px floor');
+            }
+          }
+        }
+      });
+    });
+
+    return issues;
+  };
+})();
+</script>
+
+<!-- ============================================================
+     dom-to-pptx 加载 + Export 处理
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/dom-to-pptx@latest/dist/dom-to-pptx.bundle.js"></script>
+<script>
+  const exportBtn = document.getElementById('export-btn');
+  exportBtn.addEventListener('click', async () => {
+    if (!window.domToPptx || typeof domToPptx.exportToPptx !== 'function') {
+      alert('导出失败：dom-to-pptx 库未加载成功，请检查网络或 CDN 是否可访问。');
+      return;
+    }
+
+    const issues = window.validateSlides ? window.validateSlides() : [];
+    if (issues.length) {
+      console.table(issues);
+      if (!confirm('检测到 ' + issues.length + ' 个兼容问题，是否仍然导出？')) return;
+    }
+
+    exportBtn.disabled = true;
+    exportBtn.textContent = 'Exporting...';
+    try {
+      // ⚠️ 第一个参数必须是元素或元素数组，不能是 options 对象
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      if (!slides.length) throw new Error('No .slide elements found');
+      await domToPptx.exportToPptx(slides, {
+        fileName: 'presentation.pptx',
+        autoEmbedFonts: true,
+        svgAsVector: true
+      });
+      exportBtn.textContent = 'Exported';
+    } catch (err) {
+      console.error(err);
+      alert('导出失败：' + (err && err.message ? err.message : err) +
+        '\n\n如果错误是 "root.getBoundingClientRect is not a function"，说明 exportToPptx 第一个参数错传了 options 对象，检查调用形式。');
+    } finally {
+      setTimeout(() => {
+        exportBtn.disabled = false;
+        exportBtn.textContent = 'Export PPTX';
+      }, 2000);
+    }
+  });
+</script>
+
+</body>
+</html>
