@@ -339,6 +339,25 @@
 })();
 </script>
 
+<!-- 修复 dom-to-pptx 遇到 SVG 元素时 className.split 报错的 Bug -->
+<script>
+  if (typeof SVGElement !== 'undefined' && typeof Object.defineProperty === 'function') {
+    try {
+      Object.defineProperty(SVGElement.prototype, 'className', {
+        get() {
+          return this.getAttribute('class') || '';
+        },
+        set(val) {
+          this.setAttribute('class', val);
+        },
+        configurable: true
+      });
+    } catch (e) {
+      console.error('Failed to patch SVGElement.className', e);
+    }
+  }
+</script>
+
 <!-- ============================================================
      dom-to-pptx 加载 + Export 处理
      ============================================================ -->

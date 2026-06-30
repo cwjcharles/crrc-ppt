@@ -149,6 +149,11 @@ crrc-ppt/
 
 ## 版本历史
 
+### V1.1 (2026-06-30)
+- **修复 SVG className 兼容性问题**：解决 dom-to-pptx 库与内联 SVG 图标的兼容性，修复 `node.className.split is not a function` 报错
+- 通过重定义 `SVGElement.prototype.className` 实现全局修复
+- 确保内联 SVG 图标可正常导出到 PPTX
+
 ### V1.0 (2026-05-30)
 - 初始版本发布
 - 完整的两步工作流
